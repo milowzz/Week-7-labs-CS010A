@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+   
+/* Make this function
+Purpose: to see if that character is in the string
+name: charIsFound
+return type: bool
+parameters: a string and a char
+*/
+
+bool charIsFound( string sentence, char locateChar) {
+   char equalChar;
+   int sentencelength = sentence.length();
+   for(int i= 0; i < sentencelength; i++) {
+      equalChar = sentence.at(i);
+      if(tolower(equalChar) == locateChar || toupper(equalChar) == locateChar ) {
+         return true;
+      }
+   }
+   return false;
+}
+      
+   
+
+/* make this function
+purpose: counts the number of times a character appears in a string
+name: countChar
+return: int
+parameters: a string and a char
+*/
+int countChar( string sentence, char locateChar ){
+   char equalChar;
+   int sentencelength = sentence.length();
+   int amount = 0;
+   for (int i =0; i < sentencelength; i++) {
+      equalChar = sentence.at(i);
+      if(tolower(equalChar) == locateChar || toupper(equalChar) == locateChar) {
+         amount++;
+      }
+   }
+   return amount;
+}
+     
+
+      
+int main() {
+
+   string phrase;
+   char letterToCount;
+   int countOfChar;
+   
+   getline ( cin, phrase);
+   cin >> letterToCount;
+   
+   if ( charIsFound ( phrase, letterToCount) ){
+      
+      countOfChar = countChar ( phrase, letterToCount );
+      
+      if (countOfChar > 1)
+      {
+         cout << phrase << " contains " << countOfChar << ' ' << letterToCount << "'s." << endl;
+      }
+      else{
+         cout << phrase << " contains " << countOfChar << ' ' << letterToCount << '.' << endl;
+      }
+   }
+   else {
+      
+      cout << phrase << " does not contain that letter." << endl;
+   }
+   
+   return 0;
+}
+      
