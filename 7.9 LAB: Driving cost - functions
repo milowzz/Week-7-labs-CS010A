@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+
+
+  double DrivingCost(double drivenMiles, double milesPerGallon, double dollarsPerGallon) {
+     double gallons = drivenMiles / milesPerGallon;
+     
+    double costperG = gallons * dollarsPerGallon;
+    return costperG;
+   }
+
+   int main() {
+   double milesPerGallon, dollarsPerGallon;
+   
+   cin >> milesPerGallon >> dollarsPerGallon;
+
+    double cost10 = DrivingCost(10, milesPerGallon, dollarsPerGallon);
+    
+   double cost50 = DrivingCost(50, milesPerGallon, dollarsPerGallon);
+   
+    double cost400 = DrivingCost(400, milesPerGallon, dollarsPerGallon);
+
+   cout << cost10 << " " << cost50 << " " << cost400 << endl;
+
+   return 0;
+}
