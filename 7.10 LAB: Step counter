@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+double StepsToMiles( int userSteps) {
+  double miles = (userSteps / 2000.0);
+  return miles;
+}
+   
+
+int main() {
+   double userSteps, miles;
+   cin >> userSteps;
+   
+    miles = StepsToMiles( userSteps);
+    cout << miles << endl;
+
+   return 0;
+}
