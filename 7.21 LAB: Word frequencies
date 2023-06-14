@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int wordAMT;
+    string words;
+    cin >> wordAMT;
+
+    vector<string> wordList;
+    vector<int> frequencyList(wordAMT);
+    
+    //populate the string vector
+    for( int i =0; i < wordAMT; i++){
+       cin >> words;
+       wordList.push_back(words);
+    }
+    // find how how many occurances of a string is coming from the input 
+    for(  int j =0; j < wordAMT; j++){
+      for(  int i =0; i < wordAMT; i++){
+         if(wordList.at(j) == wordList.at(i)){
+            frequencyList.at(i)++;
+         }
+         
+      }
+    }
+   for(  int j =0; j < wordAMT; j++){
+      cout << wordList.at(j) << " - " << frequencyList.at(j) << endl;
+   }
+   
+    return 0;
+}
